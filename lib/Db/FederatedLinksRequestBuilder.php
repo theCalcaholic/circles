@@ -60,6 +60,8 @@ class FederatedLinksRequestBuilder extends CoreRequestBuilder {
 	protected function getLinksInsertSql() {
 		$qb = $this->dbConnection->getQueryBuilder();
 		$qb->insert(self::TABLE_LINKS)
+		   // TODO set the key to a more meaningful value? What is it used for?
+		   ->setValue('key', $qb->createNamedParameter('somekey'))
 		   ->setValue('creation', $qb->createNamedParameter($this->timezoneService->getUTCDate()));
 
 		return $qb;
