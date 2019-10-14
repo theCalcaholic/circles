@@ -83,9 +83,9 @@ class FederatedLinksRequest extends FederatedLinksRequestBuilder {
 
 
 	/**
-	 * @param FederatedLink $link
+	 * @param FederatedLink|null $link
 	 */
-	public function delete(FederatedLink $link) {
+	public function delete(?FederatedLink $link) {
 
 		if ($link === null) {
 			return;
