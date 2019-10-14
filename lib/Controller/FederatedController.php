@@ -265,7 +265,7 @@ class FederatedController extends Controller {
 	 * @return DataResponse
 	 */
 	private function federatedFail($reason) {
-		$this->miscService->log(0, 'federated fail: ' . $reason);
+		$this->miscService->log('federated fail: ' . $reason, 0);
 
 		return new DataResponse(
 			[
