@@ -288,7 +288,7 @@ class FederatedLinkCreationService {
 			$args = ['sourceName' => $circle->getName()];
 			$url = $this->federatedLinkService->generateLinkRemoteURL($link->getAddress());
 
-			$response = $client->put($url, FederatedLinkService::generateClientBodyData($link, $args));
+			$response = $client->put($url, FederatedLinkService::generateClientBodyData($link, $args, true));
 			$result = $this->federatedLinkService->parseClientRequestResult($response);
 
 			$reason = ((key_exists('reason', $result)) ? $result['reason'] : '');

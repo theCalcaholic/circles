@@ -425,7 +425,7 @@ class FederatedLinkService {
 	 *
 	 * @return array
 	 */
-	public static function generateClientBodyData(FederatedLink $link, $options = []) {
+	public static function generateClientBodyData(FederatedLink $link, $options = [], $post = false) {
 		$args = array_merge(
 			$options, [
 						'apiVersion' => Circles::version(),
@@ -437,7 +437,11 @@ class FederatedLinkService {
 					]
 		);
 
-		return MiscService::generateClientPostBodyData($args);
+		if($post) {
+			return MiscService::generateClientPostBodyData($args);
+		} else {
+			return MiscService::generateClientBodyData($args);
+		}
 	}
 
 
