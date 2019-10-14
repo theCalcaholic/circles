@@ -437,7 +437,7 @@ class FederatedLinkService {
 					]
 		);
 
-		return MiscService::generateClientBodyData($args);
+		return MiscService::generateClientPostBodyData($args);
 	}
 
 

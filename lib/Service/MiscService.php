@@ -286,6 +286,19 @@ class MiscService {
 		];
 	}
 
+	/**
+	 * @param array $options
+	 *
+	 * @return array
+	 */
+	public static function generateClientPostBodyData($options = []) {
+		return [
+			'form_params'            => ['data' => $options],
+			'timeout'         => Application::CLIENT_TIMEOUT,
+			'connect_timeout' => Application::CLIENT_TIMEOUT
+		];
+	}
+
 
 	/**
 	 * Hacky way to async the rest of the process without keeping client on hold.
